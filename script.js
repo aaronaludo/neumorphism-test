@@ -1,28 +1,28 @@
-var size = document.querySelector('#size');
-var radius = document.querySelector('#radius');
-var distance = document.querySelector('#distance');
-var intensity = document.querySelector('#intensity');
-var blur0 = document.querySelector('#blur');
-var color = document.querySelector('#color');
-var topleft = document.querySelector('#top-left');
-var topright = document.querySelector('#top-right');
-var bottomleft = document.querySelector('#bottom-left');
-var bottomright = document.querySelector('#bottom-right');
-var flat = document.querySelector('#flat');
-var concave = document.querySelector('#concave');
-var convex = document.querySelector('#convex');
-var pressed = document.querySelector('#pressed');
-var sizevalue = document.querySelector('#sizevalue');
-var test = document.querySelector('#test');
-var radiusvalue = document.querySelector('#radiusvalue');
-var borderradius = document.querySelector('#borderradius');
-var distancevalue = document.querySelector('#distancevalue');
-var blurvalue = document.querySelector('#blurvalue');
-var boxshadow = document.querySelector('#boxshadow');
-var intensityvalue = document.querySelector('#intensityvalue');
-var colorvalue = document.querySelector('#colorvalue');
-var background = document.querySelector('#background');
-var container = document.querySelector('#container');
+const size = document.querySelector('#size');
+const radius = document.querySelector('#radius');
+const distance = document.querySelector('#distance');
+const intensity = document.querySelector('#intensity');
+const blur0 = document.querySelector('#blur');
+const color = document.querySelector('#color');
+const topleft = document.querySelector('#top-left');
+const topright = document.querySelector('#top-right');
+const bottomleft = document.querySelector('#bottom-left');
+const bottomright = document.querySelector('#bottom-right');
+const flat = document.querySelector('#flat');
+const concave = document.querySelector('#concave');
+const convex = document.querySelector('#convex');
+const pressed = document.querySelector('#pressed');
+const sizevalue = document.querySelector('#sizevalue');
+const test = document.querySelector('#test');
+const radiusvalue = document.querySelector('#radiusvalue');
+const borderradius = document.querySelector('#borderradius');
+const distancevalue = document.querySelector('#distancevalue');
+const blurvalue = document.querySelector('#blurvalue');
+const boxshadow = document.querySelector('#boxshadow');
+const intensityvalue = document.querySelector('#intensityvalue');
+const colorvalue = document.querySelector('#colorvalue');
+const background = document.querySelector('#background');
+const container = document.querySelector('#container');
 
 function colorLuminance(hex, lum) {
   hex = String(hex).replace(/[^0-9a-f]/gi, '')
@@ -119,18 +119,18 @@ function shapeBackgroundBoxshadow(topleft_background, topleft_boxshadow, toprigh
   }
 }
 
-var sizeRangeValue = function(){
-  var newValue = size.value;
-  var darkColor = colorLuminance(color.value , intensity.value * -1);
-  var lightColor = colorLuminance(color.value , intensity.value);
-  var pressed_topleft = `inset ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor},inset -${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
-  var pressed_topright = `inset -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor},inset  ${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
-  var pressed_bottomleft = `inset ${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor},inset  -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
-  var pressed_bottomright = `inset -${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor},inset  ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
-  var default_topleft = `${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor}, -${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
-  var default_topright = `-${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor}, ${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
-  var default_bottomleft = `${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor}, -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
-  var default_bottomright = `-${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor}, ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
+const sizeRangeValue = function(){
+  const newValue = size.value;
+  const darkColor = colorLuminance(color.value , intensity.value * -1);
+  const lightColor = colorLuminance(color.value , intensity.value);
+  const pressed_topleft = `inset ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor},inset -${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
+  const pressed_topright = `inset -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor},inset  ${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
+  const pressed_bottomleft = `inset ${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor},inset  -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
+  const pressed_bottomright = `inset -${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor},inset  ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
+  const default_topleft = `${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor}, -${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
+  const default_topright = `-${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor}, ${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
+  const default_bottomleft = `${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor}, -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
+  const default_bottomright = `-${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor}, ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
   sizevalue.innerHTML = newValue;
   test.style.width = `${newValue}px`;
   test.style.height = `${newValue}px`;
@@ -145,73 +145,105 @@ var sizeRangeValue = function(){
   inputRangeBackgroundBoxshadow(pressed_topleft, pressed_topright, pressed_bottomleft, pressed_bottomright, default_topleft, default_topright, default_bottomleft, default_bottomright);
 }
 
-var radiusRangeValue = function(){
-  var newValue = radius.value;
+const radiusRangeValue = function(){
+  const newValue = radius.value;
   radiusvalue.innerHTML = newValue;
   borderradius.innerHTML = `${newValue}px`;
   test.style.borderRadius = `${newValue}px`;
 }
 
-var distanceRangeValue = function(){
-  var newValue = distance.value;
-  var darkColor = colorLuminance(color.value , intensity.value * -1);
-  var lightColor = colorLuminance(color.value , intensity.value);
-  var pressed_topleft = `inset ${newValue}px ${newValue}px ${newValue * 2}px ${darkColor},inset -${newValue}px -${newValue}px ${newValue * 2}px ${lightColor}`;
-  var pressed_topright = `inset -${newValue}px ${newValue}px ${newValue * 2}px ${darkColor},inset ${newValue}px -${newValue}px ${newValue * 2}px ${lightColor}`;
-  var pressed_bottomleft = `inset ${newValue}px -${newValue}px ${newValue * 2}px ${darkColor},inset -${newValue}px ${newValue}px ${newValue * 2}px ${lightColor}`;
-  var pressed_bottomright = `inset -${newValue}px -${newValue}px ${newValue * 2}px ${darkColor},inset ${newValue}px ${newValue}px ${newValue * 2}px ${lightColor}`;
-  var default_topleft = `${newValue}px ${newValue}px ${newValue * 2}px ${darkColor}, -${newValue}px -${newValue}px ${newValue * 2}px ${lightColor}`;
-  var default_topright = `-${newValue}px ${newValue}px ${newValue * 2}px ${darkColor}, ${newValue}px -${newValue}px ${newValue * 2}px ${lightColor}`;
-  var default_bottomleft = `${newValue}px -${newValue}px ${newValue * 2}px ${darkColor}, -${newValue}px ${newValue}px ${newValue * 2}px ${lightColor}`;
-  var default_bottomright = `-${newValue}px -${newValue}px ${newValue * 2}px ${darkColor}, ${newValue}px ${newValue}px ${newValue * 2}px ${lightColor}`;
+const distanceRangeValue = function(){
+  const newValue = distance.value;
+  const darkColor = colorLuminance(color.value , intensity.value * -1);
+  const lightColor = colorLuminance(color.value , intensity.value);
+  const pressed_topleft = `inset ${newValue}px ${newValue}px ${newValue * 2}px ${darkColor},inset -${newValue}px -${newValue}px ${newValue * 2}px ${lightColor}`;
+  const pressed_topright = `inset -${newValue}px ${newValue}px ${newValue * 2}px ${darkColor},inset ${newValue}px -${newValue}px ${newValue * 2}px ${lightColor}`;
+  const pressed_bottomleft = `inset ${newValue}px -${newValue}px ${newValue * 2}px ${darkColor},inset -${newValue}px ${newValue}px ${newValue * 2}px ${lightColor}`;
+  const pressed_bottomright = `inset -${newValue}px -${newValue}px ${newValue * 2}px ${darkColor},inset ${newValue}px ${newValue}px ${newValue * 2}px ${lightColor}`;
+  const default_topleft = `${newValue}px ${newValue}px ${newValue * 2}px ${darkColor}, -${newValue}px -${newValue}px ${newValue * 2}px ${lightColor}`;
+  const default_topright = `-${newValue}px ${newValue}px ${newValue * 2}px ${darkColor}, ${newValue}px -${newValue}px ${newValue * 2}px ${lightColor}`;
+  const default_bottomleft = `${newValue}px -${newValue}px ${newValue * 2}px ${darkColor}, -${newValue}px ${newValue}px ${newValue * 2}px ${lightColor}`;
+  const default_bottomright = `-${newValue}px -${newValue}px ${newValue * 2}px ${darkColor}, ${newValue}px ${newValue}px ${newValue * 2}px ${lightColor}`;
   distancevalue.innerHTML = newValue;
   blur0.value = Math.round(newValue * 2);
   blurvalue.innerHTML = Math.round(newValue * 2);
   inputRangeBackgroundBoxshadow(pressed_topleft, pressed_topright, pressed_bottomleft, pressed_bottomright, default_topleft, default_topright, default_bottomleft, default_bottomright);
 }
 
-var intensityRangeValue = function(){
-  var newValue = intensity.value;
-  var darkColor = colorLuminance(color.value , newValue * -1);
-  var lightColor = colorLuminance(color.value , newValue);
-  var pressed_topleft = `inset ${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var pressed_topright = `inset -${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var pressed_bottomleft = `inset ${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var pressed_bottomright = `inset -${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var default_topleft = `${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor}, -${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var default_topright = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var default_bottomleft = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var default_bottomright = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+const intensityRangeValue = function(){
+  const newValue = intensity.value;
+  const darkColor = colorLuminance(color.value , newValue * -1);
+  const lightColor = colorLuminance(color.value , newValue);
+  const pressed_topleft = `inset ${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const pressed_topright = `inset -${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const pressed_bottomleft = `inset ${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const pressed_bottomright = `inset -${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const default_topleft = `${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor}, -${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const default_topright = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const default_bottomleft = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const default_bottomright = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
   intensityvalue.innerHTML = newValue;
   inputRangeBackgroundBoxshadow(pressed_topleft, pressed_topright, pressed_bottomleft, pressed_bottomright, default_topleft, default_topright, default_bottomleft, default_bottomright);
 }
 
-var blurRangeValue = function(){
-  var newValue = blur0.value;
-  var darkColor = colorLuminance(color.value , intensity.value * -1);
-  var lightColor = colorLuminance(color.value , intensity.value);
-  var pressed_topleft = `inset ${distance.value}px ${distance.value}px ${newValue}px ${darkColor},inset -${distance.value}px -${distance.value}px ${newValue}px ${lightColor}`;
-  var pressed_topright = `inset -${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var pressed_bottomleft = `inset ${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var pressed_bottomright = `inset -${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var default_topleft =  `${distance.value}px ${distance.value}px ${newValue}px ${darkColor}, -${distance.value}px -${distance.value}px ${newValue}px ${lightColor}`;
-  var default_topright = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var default_bottomleft = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var default_bottomright = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+const blurRangeValue = function(){
+  const newValue = blur0.value;
+  const darkColor = colorLuminance(color.value , intensity.value * -1);
+  const lightColor = colorLuminance(color.value , intensity.value);
+  const pressed_topleft = `inset ${distance.value}px ${distance.value}px ${newValue}px ${darkColor},inset -${distance.value}px -${distance.value}px ${newValue}px ${lightColor}`;
+  const pressed_topright = `inset -${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const pressed_bottomleft = `inset ${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const pressed_bottomright = `inset -${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const default_topleft =  `${distance.value}px ${distance.value}px ${newValue}px ${darkColor}, -${distance.value}px -${distance.value}px ${newValue}px ${lightColor}`;
+  const default_topright = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const default_bottomleft = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const default_bottomright = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
   blurvalue.innerHTML = newValue;
   inputRangeBackgroundBoxshadow(pressed_topleft, pressed_topright, pressed_bottomleft, pressed_bottomright, default_topleft, default_topright, default_bottomleft, default_bottomright);
 }
 
-var colorRangeValue = function(){
-  var newValue = color.value;
-  var darkColor = colorLuminance(newValue , intensity.value * -1);
-  var lightColor = colorLuminance(newValue , intensity.value);
-  var firstGradientColor = colorLuminance(color.value, -0.1);
-  var secondGradientColor = colorLuminance(color.value, 0.07);
+const colorRangeValue = function(){
+  const newValue = color.value;
+  const darkColor = colorLuminance(newValue , intensity.value * -1);
+  const lightColor = colorLuminance(newValue , intensity.value);
+  const firstGradientColor = colorLuminance(color.value, -0.1);
+  const secondGradientColor = colorLuminance(color.value, 0.07);
   colorvalue.innerHTML = newValue;
   background.innerHTML = newValue;
   test.style.background = newValue;
   container.style.background = newValue;
+
+  function getContrast(hex) {
+    const r = parseInt(hex.substr(1, 2), 16),
+    g = parseInt(hex.substr(3, 2), 16),
+    b = parseInt(hex.substr(5, 2), 16),
+    yiq = (r * 299 + g * 587 + b * 114) / 1000
+    return yiq >= 128 ? '#001f3f' : '#F6F5F7'
+  }
+
+  if(getContrast(newValue) === '#001f3f'){
+    document.querySelector('#code').style.background = '#1d1f21';
+    for (var i = 0; i < document.getElementsByClassName('code_color').length; i++) {
+      document.getElementsByClassName('code_color')[i].style.color = '#96CBFE';
+    }
+    for (var i = 0; i < document.getElementsByClassName('code_color2').length; i++) {
+      document.getElementsByClassName('code_color2')[i].style.color = '#C5C8C6';
+    }
+    for (var i = 0; i < document.getElementsByClassName('text_color').length; i++) {
+      document.getElementsByClassName('text_color')[i].style.color = '#000000';
+    }
+  }else{
+    document.querySelector('#code').style.background = '#ffffff';
+    for (var i = 0; i < document.getElementsByClassName('code_color').length; i++) {
+      document.getElementsByClassName('code_color')[i].style.color = '#990055';
+    }
+    for (var i = 0; i < document.getElementsByClassName('code_color2').length; i++) {
+      document.getElementsByClassName('code_color2')[i].style.color = '#000000';
+    }
+    for (var i = 0; i < document.getElementsByClassName('text_color').length; i++) {
+      document.getElementsByClassName('text_color')[i].style.color = '#ffffff';
+    }
+  }
 
   if(pressed.className === 'active-shape'){
     if(topleft.className === 'active-position'){
@@ -288,144 +320,144 @@ var colorRangeValue = function(){
   }
 }
 
-var topLeftClickValue = function(){
+const topLeftClickValue = function(){
   if(document.querySelector('.active-position') !== document.querySelector('#top-left')){
     document.querySelector('.active-position').classList.remove('active-position');
     document.querySelector('#top-left').classList.add('active-position');
   }
 
-  var darkColor = colorLuminance(color.value , intensity.value * -1);
-  var lightColor = colorLuminance(color.value , intensity.value);
-  var firstGradientColor = colorLuminance(color.value, -0.1);
-  var secondGradientColor = colorLuminance(color.value, 0.07);
-  var pressed_boxshadow = `inset ${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var default_boxshadow = `${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor}, -${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var concave_background = `linear-gradient(145deg, ${firstGradientColor}, ${secondGradientColor})`;
-  var convex_background = `linear-gradient(145deg, ${secondGradientColor}, ${firstGradientColor})`;
+  const darkColor = colorLuminance(color.value , intensity.value * -1);
+  const lightColor = colorLuminance(color.value , intensity.value);
+  const firstGradientColor = colorLuminance(color.value, -0.1);
+  const secondGradientColor = colorLuminance(color.value, 0.07);
+  const pressed_boxshadow = `inset ${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const default_boxshadow = `${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor}, -${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const concave_background = `linear-gradient(145deg, ${firstGradientColor}, ${secondGradientColor})`;
+  const convex_background = `linear-gradient(145deg, ${secondGradientColor}, ${firstGradientColor})`;
   positionBackgroundBoxshadow(pressed_boxshadow, default_boxshadow, concave_background, convex_background);
 }
 
-var topRightClickValue = function(){
+const topRightClickValue = function(){
   if(document.querySelector('.active-position') !== topright){
     document.querySelector('.active-position').classList.remove('active-position');
     topright.classList.add('active-position');
   }
-  var darkColor = colorLuminance(color.value , intensity.value * -1);
-  var lightColor = colorLuminance(color.value , intensity.value);
-  var firstGradientColor = colorLuminance(color.value, -0.1);
-  var secondGradientColor = colorLuminance(color.value, 0.07);
-  var pressed_boxshadow = `inset -${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var default_boxshadow = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var concave_background = `linear-gradient(225deg, ${firstGradientColor}, ${secondGradientColor})`;
-  var convex_background = `linear-gradient(225deg, ${secondGradientColor}, ${firstGradientColor})`;
+  const darkColor = colorLuminance(color.value , intensity.value * -1);
+  const lightColor = colorLuminance(color.value , intensity.value);
+  const firstGradientColor = colorLuminance(color.value, -0.1);
+  const secondGradientColor = colorLuminance(color.value, 0.07);
+  const pressed_boxshadow = `inset -${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const default_boxshadow = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const concave_background = `linear-gradient(225deg, ${firstGradientColor}, ${secondGradientColor})`;
+  const convex_background = `linear-gradient(225deg, ${secondGradientColor}, ${firstGradientColor})`;
   positionBackgroundBoxshadow(pressed_boxshadow, default_boxshadow, concave_background, convex_background);
 }
 
-var bottomLeftClickValue = function(){
+const bottomLeftClickValue = function(){
   if(document.querySelector('.active-position') !== bottomleft){
     document.querySelector('.active-position').classList.remove('active-position');
     bottomleft.classList.add('active-position');
   }
-  var darkColor = colorLuminance(color.value , intensity.value * -1);
-  var lightColor = colorLuminance(color.value , intensity.value);
-  var firstGradientColor = colorLuminance(color.value, -0.1);
-  var secondGradientColor = colorLuminance(color.value, 0.07);
-  var pressed_boxshadow = `inset ${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var default_boxshadow = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var concave_background = `linear-gradient(45deg, ${firstGradientColor}, ${secondGradientColor})`;
-  var convex_background = `linear-gradient(45deg, ${secondGradientColor}, ${firstGradientColor})`;
+  const darkColor = colorLuminance(color.value , intensity.value * -1);
+  const lightColor = colorLuminance(color.value , intensity.value);
+  const firstGradientColor = colorLuminance(color.value, -0.1);
+  const secondGradientColor = colorLuminance(color.value, 0.07);
+  const pressed_boxshadow = `inset ${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const default_boxshadow = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const concave_background = `linear-gradient(45deg, ${firstGradientColor}, ${secondGradientColor})`;
+  const convex_background = `linear-gradient(45deg, ${secondGradientColor}, ${firstGradientColor})`;
   positionBackgroundBoxshadow(pressed_boxshadow, default_boxshadow, concave_background, convex_background);
 }
 
-var bottomRightClickValue = function(){
+const bottomRightClickValue = function(){
   if(document.querySelector('.active-position') !== bottomright){
     document.querySelector('.active-position').classList.remove('active-position');
     bottomright.classList.add('active-position');
   }
-  var darkColor = colorLuminance(color.value , intensity.value * -1);
-  var lightColor = colorLuminance(color.value , intensity.value);
-  var firstGradientColor = colorLuminance(color.value, -0.1);
-  var secondGradientColor = colorLuminance(color.value, 0.07);
-  var pressed_boxshadow = `inset -${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var default_boxshadow = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var concave_background = `linear-gradient(315deg, ${firstGradientColor}, ${secondGradientColor})`;
-  var convex_background = `linear-gradient(315deg, ${secondGradientColor}, ${firstGradientColor})`;
+  const darkColor = colorLuminance(color.value , intensity.value * -1);
+  const lightColor = colorLuminance(color.value , intensity.value);
+  const firstGradientColor = colorLuminance(color.value, -0.1);
+  const secondGradientColor = colorLuminance(color.value, 0.07);
+  const pressed_boxshadow = `inset -${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const default_boxshadow = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const concave_background = `linear-gradient(315deg, ${firstGradientColor}, ${secondGradientColor})`;
+  const convex_background = `linear-gradient(315deg, ${secondGradientColor}, ${firstGradientColor})`;
   positionBackgroundBoxshadow(pressed_boxshadow, default_boxshadow, concave_background, convex_background);
 }
 
-var flatClick = function(){
+const flatClick = function(){
   if(document.querySelector('.active-shape') !== document.querySelector('#flat')){
     document.querySelector('.active-shape').classList.remove('active-shape');
     document.querySelector('#flat').classList.add('active-shape');
   }
-  var darkColor = colorLuminance(color.value , intensity.value * -1);
-  var lightColor = colorLuminance(color.value , intensity.value);
-  var topleft_background = color.value;
-  var topleft_boxshadow = `${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},-${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var topright_background = color.value;
-  var topright_boxshadow = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var bottomleft_background = color.value;
-  var bottomleft_boxshadow = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},-${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var bottomright_background = color.value;
-  var bottomright_boxshadow = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const darkColor = colorLuminance(color.value , intensity.value * -1);
+  const lightColor = colorLuminance(color.value , intensity.value);
+  const topleft_background = color.value;
+  const topleft_boxshadow = `${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},-${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const topright_background = color.value;
+  const topright_boxshadow = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const bottomleft_background = color.value;
+  const bottomleft_boxshadow = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},-${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const bottomright_background = color.value;
+  const bottomright_boxshadow = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
   shapeBackgroundBoxshadow(topleft_background, topleft_boxshadow, topright_background, topright_boxshadow, bottomleft_background, bottomleft_boxshadow, bottomright_background, bottomright_boxshadow);
 }
 
-var concaveClick = function(){
+const concaveClick = function(){
   if(document.querySelector('.active-shape') !== concave){
     document.querySelector('.active-shape').classList.remove('active-shape');
     concave.classList.add('active-shape');
   }
-  var darkColor = colorLuminance(color.value , intensity.value * -1);
-  var lightColor = colorLuminance(color.value , intensity.value);
-  var firstGradientColor = colorLuminance(color.value, -0.1);
-  var secondGradientColor = colorLuminance(color.value, 0.07); 
-  var topleft_background = `linear-gradient(145deg, ${firstGradientColor}, ${secondGradientColor})`;
-  var topleft_boxshadow = `${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},-${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var topright_background = `linear-gradient(225deg, ${firstGradientColor}, ${secondGradientColor})`;
-  var topright_boxshadow = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var bottomleft_background = `linear-gradient(45deg, ${firstGradientColor}, ${secondGradientColor})`;
-  var bottomleft_boxshadow = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},-${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var bottomright_background = `linear-gradient(315deg, ${firstGradientColor}, ${secondGradientColor})`;
-  var bottomright_boxshadow = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const darkColor = colorLuminance(color.value , intensity.value * -1);
+  const lightColor = colorLuminance(color.value , intensity.value);
+  const firstGradientColor = colorLuminance(color.value, -0.1);
+  const secondGradientColor = colorLuminance(color.value, 0.07); 
+  const topleft_background = `linear-gradient(145deg, ${firstGradientColor}, ${secondGradientColor})`;
+  const topleft_boxshadow = `${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},-${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const topright_background = `linear-gradient(225deg, ${firstGradientColor}, ${secondGradientColor})`;
+  const topright_boxshadow = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const bottomleft_background = `linear-gradient(45deg, ${firstGradientColor}, ${secondGradientColor})`;
+  const bottomleft_boxshadow = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},-${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const bottomright_background = `linear-gradient(315deg, ${firstGradientColor}, ${secondGradientColor})`;
+  const bottomright_boxshadow = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
   shapeBackgroundBoxshadow(topleft_background, topleft_boxshadow, topright_background, topright_boxshadow, bottomleft_background, bottomleft_boxshadow, bottomright_background, bottomright_boxshadow);
 }
 
-var convexClick = function(){
+const convexClick = function(){
   if(document.querySelector('.active-shape') !== convex){
     document.querySelector('.active-shape').classList.remove('active-shape');
     convex.classList.add('active-shape');
   }
-  var darkColor = colorLuminance(color.value , intensity.value * -1);
-  var lightColor = colorLuminance(color.value , intensity.value);
-  var firstGradientColor = colorLuminance(color.value, 0.07);
-  var secondGradientColor = colorLuminance(color.value, - 0.1);
-  var topleft_background = `linear-gradient(145deg, ${firstGradientColor}, ${secondGradientColor})`;
-  var topleft_boxshadow = `${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},-${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var topright_background = `linear-gradient(225deg, ${firstGradientColor}, ${secondGradientColor})`;
-  var topright_boxshadow = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var bottomleft_background = `linear-gradient(45deg, ${firstGradientColor}, ${secondGradientColor})`;
-  var bottomleft_boxshadow = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},-${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var bottomright_background = `linear-gradient(315deg, ${firstGradientColor}, ${secondGradientColor})`;
-  var bottomright_boxshadow = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const darkColor = colorLuminance(color.value , intensity.value * -1);
+  const lightColor = colorLuminance(color.value , intensity.value);
+  const firstGradientColor = colorLuminance(color.value, 0.07);
+  const secondGradientColor = colorLuminance(color.value, - 0.1);
+  const topleft_background = `linear-gradient(145deg, ${firstGradientColor}, ${secondGradientColor})`;
+  const topleft_boxshadow = `${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},-${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const topright_background = `linear-gradient(225deg, ${firstGradientColor}, ${secondGradientColor})`;
+  const topright_boxshadow = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const bottomleft_background = `linear-gradient(45deg, ${firstGradientColor}, ${secondGradientColor})`;
+  const bottomleft_boxshadow = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},-${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const bottomright_background = `linear-gradient(315deg, ${firstGradientColor}, ${secondGradientColor})`;
+  const bottomright_boxshadow = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
   shapeBackgroundBoxshadow(topleft_background, topleft_boxshadow, topright_background, topright_boxshadow, bottomleft_background, bottomleft_boxshadow, bottomright_background, bottomright_boxshadow);
 }
 
-var pressedClick = function(){
+const pressedClick = function(){
   if(document.querySelector('.active-shape') !== pressed){
     document.querySelector('.active-shape').classList.remove('active-shape');
     pressed.classList.add('active-shape');
   }
-  var darkColor = colorLuminance(color.value , intensity.value * -1);
-  var lightColor = colorLuminance(color.value , intensity.value);
-  var topleft_background = color.value;
-  var topleft_boxshadow = `inset ${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var topright_background = color.value;
-  var topright_boxshadow = `inset -${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
-  var bottomleft_background = color.value;
-  var bottomleft_boxshadow = `inset ${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  var bottomright_background = color.value;
-  var bottomright_boxshadow = `inset -${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const darkColor = colorLuminance(color.value , intensity.value * -1);
+  const lightColor = colorLuminance(color.value , intensity.value);
+  const topleft_background = color.value;
+  const topleft_boxshadow = `inset ${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const topright_background = color.value;
+  const topright_boxshadow = `inset -${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
+  const bottomleft_background = color.value;
+  const bottomleft_boxshadow = `inset ${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
+  const bottomright_background = color.value;
+  const bottomright_boxshadow = `inset -${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor},inset ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
   shapeBackgroundBoxshadow(topleft_background, topleft_boxshadow, topright_background, topright_boxshadow, bottomleft_background, bottomleft_boxshadow, bottomright_background, bottomright_boxshadow);
 }
 
