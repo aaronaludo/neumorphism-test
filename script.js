@@ -24,6 +24,8 @@ const colorvalue = document.querySelector('#colorvalue');
 const background = document.querySelector('#background');
 const container = document.querySelector('#container');
 
+console.log(pressed.className);
+
 function colorLuminance(hex, lum) {
   hex = String(hex).replace(/[^0-9a-f]/gi, '')
   if (hex.length < 6) {
@@ -131,15 +133,15 @@ const sizeRangeValue = function(){
   const default_topright = `-${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor}, ${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
   const default_bottomleft = `${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor}, -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
   const default_bottomright = `-${Math.round(newValue * 0.1)}px -${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${darkColor}, ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1)}px ${Math.round(newValue * 0.1) * 2}px ${lightColor}`;
-  sizevalue.innerHTML = newValue;
+  // sizevalue.innerHTML = newValue;
   test.style.width = `${newValue}px`;
   test.style.height = `${newValue}px`;
   radius.setAttribute('max', Math.round(newValue / 2));
-  radiusvalue.innerHTML = radius.value;
+  // radiusvalue.innerHTML = radius.value;
   borderradius.innerHTML = `${radius.value}px`;
   test.style.borderRadius = `${radius.value}px`
-  distancevalue.innerHTML = Math.round(newValue * 0.1);
-  blurvalue.innerHTML = Math.round(newValue * 0.2);
+  // distancevalue.innerHTML = Math.round(newValue * 0.1);
+  // blurvalue.innerHTML = Math.round(newValue * 0.2);
   distance.value = Math.round(newValue * 0.1);
   blur0.value = Math.round(newValue * 0.2);
   inputRangeBackgroundBoxshadow(pressed_topleft, pressed_topright, pressed_bottomleft, pressed_bottomright, default_topleft, default_topright, default_bottomleft, default_bottomright);
@@ -147,8 +149,8 @@ const sizeRangeValue = function(){
 
 const radiusRangeValue = function(){
   const newValue = radius.value;
-  radiusvalue.innerHTML = newValue;
-  borderradius.innerHTML = `${newValue}px`;
+  // radiusvalue.innerHTML = newValue;
+  // borderradius.innerHTML = `${newValue}px`;
   test.style.borderRadius = `${newValue}px`;
 }
 
@@ -164,9 +166,9 @@ const distanceRangeValue = function(){
   const default_topright = `-${newValue}px ${newValue}px ${newValue * 2}px ${darkColor}, ${newValue}px -${newValue}px ${newValue * 2}px ${lightColor}`;
   const default_bottomleft = `${newValue}px -${newValue}px ${newValue * 2}px ${darkColor}, -${newValue}px ${newValue}px ${newValue * 2}px ${lightColor}`;
   const default_bottomright = `-${newValue}px -${newValue}px ${newValue * 2}px ${darkColor}, ${newValue}px ${newValue}px ${newValue * 2}px ${lightColor}`;
-  distancevalue.innerHTML = newValue;
+  // distancevalue.innerHTML = newValue;
   blur0.value = Math.round(newValue * 2);
-  blurvalue.innerHTML = Math.round(newValue * 2);
+  // blurvalue.innerHTML = Math.round(newValue * 2);
   inputRangeBackgroundBoxshadow(pressed_topleft, pressed_topright, pressed_bottomleft, pressed_bottomright, default_topleft, default_topright, default_bottomleft, default_bottomright);
 }
 
@@ -182,7 +184,7 @@ const intensityRangeValue = function(){
   const default_topright = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
   const default_bottomleft = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
   const default_bottomright = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  intensityvalue.innerHTML = newValue;
+  // intensityvalue.innerHTML = newValue;
   inputRangeBackgroundBoxshadow(pressed_topleft, pressed_topright, pressed_bottomleft, pressed_bottomright, default_topleft, default_topright, default_bottomleft, default_bottomright);
 }
 
@@ -198,7 +200,7 @@ const blurRangeValue = function(){
   const default_topright = `-${distance.value}px ${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px -${distance.value}px ${blur0.value}px ${lightColor}`;
   const default_bottomleft = `${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, -${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
   const default_bottomright = `-${distance.value}px -${distance.value}px ${blur0.value}px ${darkColor}, ${distance.value}px ${distance.value}px ${blur0.value}px ${lightColor}`;
-  blurvalue.innerHTML = newValue;
+  // blurvalue.innerHTML = newValue;
   inputRangeBackgroundBoxshadow(pressed_topleft, pressed_topright, pressed_bottomleft, pressed_bottomright, default_topleft, default_topright, default_bottomleft, default_bottomright);
 }
 
@@ -208,8 +210,8 @@ const colorRangeValue = function(){
   const lightColor = colorLuminance(newValue , intensity.value);
   const firstGradientColor = colorLuminance(color.value, -0.1);
   const secondGradientColor = colorLuminance(color.value, 0.07);
-  colorvalue.innerHTML = newValue;
-  background.innerHTML = newValue;
+  // colorvalue.innerHTML = newValue;
+  // background.innerHTML = newValue;
   test.style.background = newValue;
   container.style.background = newValue;
 
